@@ -9,9 +9,9 @@ module.exports = {
 	execute(client) {
     var time = new Date
     console.log(time.toISOString())
-    console.log(`Logged in as ${readyClient.user.tag}!`);
+    console.log(`Logged in as ${client.user.tag}!`);
     console.log("-----\nlist of guilds:")
-    readyClient.guilds.cache.forEach((guild) => {
+    client.guilds.cache.forEach((guild) => {
       console.log(guild.name)
     })
 	},
