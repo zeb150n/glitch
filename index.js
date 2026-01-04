@@ -1,7 +1,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const { MongoClient, ServerApiVersion } = require("mongodb");
+const { Client, Collection, Events, IntentsBitField, MessageFlags, Partials } = require('discord.js');
 
-const { Client, Collection, Events, IntentsBitField, MessageFlags } = require('discord.js');
 const { token } = require('./db/config.json');
 const messages = require('./db/messages.json');
 
@@ -13,6 +14,10 @@ const client = new Client({
     IntentsBitField.Flags.GuildMessages,
     IntentsBitField.Flags.GuildVoiceStates,
     IntentsBitField.Flags.MessageContent,
+  ],
+  partials: [
+    Partials.GuildMember,
+    Partials.User
   ],
  });
 

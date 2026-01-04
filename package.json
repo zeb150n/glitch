@@ -1,6 +1,8 @@
 {
-  "main" : "bot.js",
+  "main": "index.js",
   "dependencies": {
-    "discord.js": "^14.25.1"
+    "discord.js": "^14.25.1",
+    "mongodb": "^7.0.0",
+    "prompt-sync": "^4.2.0"
   }
 }
