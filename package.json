@@ -4,5 +4,22 @@
     "discord.js": "^14.25.1",
     "mongodb": "^7.0.0",
     "prompt-sync": "^4.2.0"
-  }
+  },
+  "name": "glitch",
+  "description": "Discord bot using nodejs",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeb150n/glitch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zeb150n/glitch/issues"
+  },
+  "homepage": "https://github.com/zeb150n/glitch#readme"
 }

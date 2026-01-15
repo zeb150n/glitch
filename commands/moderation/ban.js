@@ -24,18 +24,25 @@ module.exports = {
     command_arguments = interaction.options.data
 
     target_user = command_arguments[0].member
-		ban_reason = command_arguments[1].value
-		purge_duration = command_arguments[2].value
+	if (command_arguments[1])
+		{ban_reason = command_arguments[1].value}
+	else
+		{ban_reason = null}
 
-		reply = 'banned <@' + target_user.id + '>!'
-		if (ban_reason) { reply += "\nReason : " + ban_reason }
-		if (purge_duration) { reply += "\nDeleting messages for : " + purge_duration + " days." }
+	if (command_arguments[2])
+		{purge_duration = command_arguments[2].value}
+	else
+		{purge_duration = null}
 
-		if (purge_duration) { purge_duration = purge_duration * 24 * 60 * 60 }
+	reply = 'banned <@' + target_user.id + '>!'
+	if (ban_reason) { reply += "\nReason : " + ban_reason }
+	if (purge_duration) { reply += "\nDeleting messages for : " + purge_duration + " days." }
 
-		await interaction.reply(reply);
-		target_user.ban({ deleteMessageSeconds: purge_duration, reason: ban_reason })
-  		.then(console.log)
-			.catch(console.error);
-		},
+	if (purge_duration) { purge_duration = purge_duration * 24 * 60 * 60 }
+
+	await interaction.reply(reply);
+	target_user.ban({ deleteMessageSeconds: purge_duration, reason: ban_reason })
+	.then(console.log)
+		.catch(console.error);
+	},
 };
